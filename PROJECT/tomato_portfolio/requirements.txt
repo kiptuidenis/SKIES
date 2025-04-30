@@ -1,3 +1,5 @@
 Flask==2.0.1
 Flask-Mail==0.9.1
-python-dotenv==0.19.0 
+python-dotenv==0.19.0
+gunicorn
+Werkzeug==2.2.3
