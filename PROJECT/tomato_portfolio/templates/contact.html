@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tomato Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/animations.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/theme.css">
+</head>
+<body>
+    <div class="background">
+        <header class="fade-in">
+            <h1>Contact Us</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/team">Team</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Send us a Message</h3>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <div class="flash-messages">
+                                {% for category, message in messages %}
+                                    <div class="{{ category }}">{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <form action="{{ url_for('contact') }}" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <h3>Our Location</h3>
+                    <p>123 Tomato Street<br>
+                    Farmville, CA 12345<br>
+                    United States</p>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                    Saturday: 10:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                </div>
+            </div>
+        </main>
+        <footer class="fade-in">
+            <p>&copy; 2025 Tomato Project Group</p>
+        </footer>
+    </div>
+</body>
+</html>

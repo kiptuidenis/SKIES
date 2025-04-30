@@ -1,0 +1,25 @@
+body.dark-mode {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+body.dark-mode .background {
+    background-color: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode nav a {
+    color: #006400;
+}
+body.dark-mode nav a:hover {
+    color: #008000;
+}
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #ff4d4d;
+}
+body.dark-mode button {
+    background-color: #444;
+    color: white;
+}
+body.dark-mode button:hover {
+    background-color: #666;
+}
